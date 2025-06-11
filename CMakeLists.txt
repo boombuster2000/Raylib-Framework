@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(raylibframework VERSION 1.0.0 LANGUAGES C CXX)
+project(raylibFramework VERSION 1.0.0 LANGUAGES C CXX)
 
 # Specify C and C++ standards if needed.
 set(CMAKE_C_STANDARD 99)
@@ -27,20 +27,20 @@ file(GLOB_RECURSE RAYLIBFRAMEWORK_SRC CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_
 file(GLOB_RECURSE RAYLIBFRAMEWORK_HEADER CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
 
 # Create the library target (static or shared as desired).
-add_library(raylibframework ${RAYLIBFRAMEWORK_SRC} ${RAYLIBFRAMEWORK_HEADER})
+add_library(raylibFramework ${RAYLIBFRAMEWORK_SRC} ${RAYLIBFRAMEWORK_HEADER})
 
 # Specify include directories for your library.
-target_include_directories(raylibframework PUBLIC 
+target_include_directories(raylibFramework PUBLIC 
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include>"
 )
 
 # Link the downloaded raylib library.
-target_link_libraries(raylibframework PRIVATE raylib)
+target_link_libraries(raylibFramework PRIVATE raylib)
 
 # Optionally, add installation rules
 include(GNUInstallDirs)
-install(TARGETS raylibframework EXPORT raylibframeworkConfig
+install(TARGETS raylibFramework EXPORT raylibFrameworkConfig
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
