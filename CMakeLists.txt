@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 project(raylibFramework VERSION 1.0.0 LANGUAGES C CXX)
 
-# Specify C and C++ standards if needed.
-set(CMAKE_C_STANDARD 99)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # Optionally, disable raylib examples (or other options) before downloading raylib.
 # This ensures you only build the raylib library.
 set(BUILD_EXAMPLES OFF CACHE BOOL "Disable building raylib examples" FORCE)
